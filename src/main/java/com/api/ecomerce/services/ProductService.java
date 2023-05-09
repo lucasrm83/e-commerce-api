@@ -5,6 +5,8 @@ import com.api.ecomerce.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ProductService {
@@ -20,6 +22,9 @@ public class ProductService {
 
     public void delete(Product product){
         productRepository.delete(product);
+    }
+    public Optional<Product> findById(UUID id) {
+        return productRepository.findById(id);
     }
 
 
